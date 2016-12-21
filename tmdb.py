@@ -19,7 +19,8 @@ class _TMDBClient:
     @staticmethod
     def _query_tmdb_api(url):
         """
-        A generic http GET call to a url expecting a JSON response
+        A generic http GET call to a url that returns a JSON formatted response.
+        Convert the jSON to a dictionary and return.
         """
         contents = {}
         try:
@@ -60,7 +61,7 @@ class _TMDBClient:
 
     def get_movie_trailer_url(self, tmdb_id):
         """
-        Get a list of trailer and return the first one that is :
+        Get a list of videos associated with the movie and return the first one that is :
          - A trailer
          - on YouTube
          - in English
@@ -81,7 +82,7 @@ class _TMDBClient:
 
 def tmdb_client():
     """
-    Extremely simplictic singleton
+    Extremely simplistic singleton
     """
     global _tmdb
     if _tmdb is None:

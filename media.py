@@ -12,7 +12,7 @@ class Movie:
     def load_tmdb_details(self):
         """This functions calls to the tmdb client to obtain the movie title and its poster path """
         details = tmdb.tmdb_client().get_movie_details(self.tmdb_id)
-        if {"title", "poster_path"} <= set(details):
+        if {"title", "poster_path"} <= set(details):  # ensure both keys are in the results dict.
             self.title = details["title"]
             self.poster_image_url = details["poster_path"]
 
