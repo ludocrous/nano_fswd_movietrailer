@@ -1,8 +1,9 @@
 import media
 import fresh_tomatoes
 
-MOVIE_ID_LIST = ["330459"]
+MOVIE_ID_LIST = ["6977", "68718", "68735", "22954", "881", "286217", "330459", "278", "281957"]
 movies = []
+
 
 def create_movies():
     global movies
@@ -17,7 +18,9 @@ def load_movies():
         movie.load_tmdb_details()
         movie.load_movie_trailer()
 
+
 if __name__ == '__main__':
     create_movies()
     load_movies()
+
     fresh_tomatoes.open_movies_page(movies)

@@ -133,6 +133,8 @@ def create_movie_tiles_content(movies):
     # The HTML content for this section of the page
     content = ''
     for movie in movies:
+        if not movie.is_ready_for_website():
+            continue
         # Extract the youtube ID from the url
         youtube_id_match = re.search(
             r'(?<=v=)[^&#]+', movie.trailer_youtube_url)
